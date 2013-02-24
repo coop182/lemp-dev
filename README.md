@@ -11,7 +11,7 @@ Vagrant development environment provisioned with shell scripts on a (linux/ubunt
 4. Clone `https://github.com/coop182/lemp-dev.git` to your computer.
 5. Add any host names you want setup into `host-aliases-example` (one per line) and rename it to `host-aliases`
 5. Double click `start-server.app` - the first run will take a while, it may launch a terminal window which needs administrator access so it can update your hosts file.
-6. Browse to [http://lempdev.localhost](http://dev.localhost) in the browser of your choice, it should resolve.
+6. Browse to [http://lempdev.localhost](http://lempdev.localhost) in the browser of your choice, it should resolve.
 
 ## Credits and info
 

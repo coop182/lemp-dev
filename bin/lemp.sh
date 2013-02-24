@@ -15,8 +15,8 @@ apt-packages-install     \
 mysql-remote-access-allow
 
 # setup new mysql admin user
-mysql -u root -e "GRANT ALL PRIVILEGES ON  * . * TO  'admin'@'localhost' IDENTIFIED BY  'admin';"
-mysql -u root -e "GRANT GRANT OPTION ON  * . * TO  'admin'@'localhost' IDENTIFIED BY  'admin';"
+mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin';"
+mysql -u root -e "GRANT GRANT OPTION ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin';"
 
 # Restart MySQL service for changes to take effect.
 mysql-restart
@@ -31,22 +31,22 @@ if [ ! -f "/usr/local/bin/composer" ]; then
 fi
 
 # Setup the localhost virtual host
-if [ ! -d '/data/httpd/lempdev.localhost' ]; then
-  sudo mkdir -p /data/httpd/lempdev.localhost
-  PHP=/usr/bin/php5-fpm nginx-sites-create "00-lempdev.localhost" "/data/httpd/lempdev.localhost" "vagrant"
-  nginx-sites-enable "00-lempdev.localhost"
+if [ ! -d '/data/www/lempdev.localhost' ]; then
+  sudo mkdir -p /data/www/lempdev.localhost
+  PHP=/usr/bin/php5-fpm nginx-sites-create "lempdev.localhost" "/data/www/lempdev.localhost" "vagrant"
+  nginx-sites-enable "lempdev.localhost"
 fi
 
 #symlink phpmyadmin to localhost directory
-if [ ! -d "/data/httpd/lempdev.localhost/phpmyadmin" ]; then
-    sudo ln -s /usr/share/phpmyadmin /data/httpd/lempdev.localhost
+if [ ! -d "/data/www/lempdev.localhost/phpmyadmin" ]; then
+    sudo ln -s /usr/share/phpmyadmin /data/www/lempdev.localhost
 fi
 
 # create virtual hosts
 for site in `cat /vagrant/host-aliases`; do
-    if [ ! -d "/data/httpd/$site" ]; then
-        sudo mkdir -p /data/httpd/$site
-        PHP=/usr/bin/php5-fpm nginx-sites-create "$site" "/data/httpd/$site" "vagrant"
+    if [ ! -d "/data/www/$site" ]; then
+        sudo mkdir -p /data/www/$site
+        PHP=/usr/bin/php5-fpm nginx-sites-create "$site" "/data/www/$site" "vagrant"
         nginx-sites-enable "$site"
     fi
 done
