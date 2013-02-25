@@ -12,3 +12,6 @@ echo 'if [ -d "/usr/lib/node_modules" ]; then NODE_PATH="/usr/lib/node_modules";
 
 # http://meteor.com/main see: https://github.com/meteor/meteor
 curl https://install.meteor.com | /bin/sh
+
+# install bower
+sudo npm install bower -g
