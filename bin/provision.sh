@@ -24,5 +24,6 @@ apt-packages-install                 \
 
 <%= import 'bin/samba.sh' %>
 <%= import 'bin/lemp.sh' %>
+<%= import 'bin/node.sh' %>
 
 echo 'if [ -d "/vagrant/bin" ]; then PATH=$PATH":/vagrant/bin"; fi' >> ~/.profile
