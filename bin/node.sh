@@ -4,8 +4,7 @@ apt-packages-ppa 'chris-lea/node.js'
 apt-packages-update
 
 apt-packages-install \
-  nodejs             \
-  npm
+  nodejs
 
 # set node path
 echo 'if [ -d "/usr/lib/node_modules" ]; then NODE_PATH="/usr/lib/node_modules"; fi' >> ~/.profile

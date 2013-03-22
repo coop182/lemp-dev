@@ -20,7 +20,7 @@ echo "PROGRESS:80"
 echo "Server Started!"
 
 mkdir data
-mount -t smbfs //guest@192.168.33.11/data data
+mount -t afp afp://vagrant:vagrant@192.168.33.11/local-dev data
 
 echo "PROGRESS:90"
 echo "Shared Drive Mounted!"

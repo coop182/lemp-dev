@@ -22,6 +22,7 @@ apt-packages-install                 \
   imagemagick                        \
   curl
 
+<%= import 'bin/afp.sh' %>
 <%= import 'bin/samba.sh' %>
 <%= import 'bin/lemp.sh' %>
 <%= import 'bin/node.sh' %>
