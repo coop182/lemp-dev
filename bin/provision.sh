@@ -19,6 +19,7 @@ apt-packages-update
 # Install VM packages.
 apt-packages-install                 \
   git-core                           \
+  git-flow                           \
   imagemagick                        \
   curl
 
